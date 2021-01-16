@@ -1,17 +1,24 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import App from './App';
-import reportWebVitals from './reportWebVitals';
+import React, { useState } from "react";
+import ReactDom from "react-dom";
+import "./style/style.css";
+import Booklist from "./Booklist";
+import AddBook from "./AddBook";
+import books from "./data/books.json";
 
-ReactDOM.render(
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
-  document.getElementById('root')
-);
+function App() {
+  const [newBooks, setNewBooks] = useState([]);
 
-// If you want to start measuring performance in your app, pass a function
-// to log results (for example: reportWebVitals(console.log))
-// or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
-reportWebVitals();
+  const handleNewBook = (newBook) => {
+    const obj = { "title": newBook };
+    setNewBooks((books) => books.concat(obj));
+  };
+
+  return (
+    <div>
+      <Booklist books={books} newBooks={newBooks} />
+      <AddBook handle={handleNewBook} />
+    </div>
+  );
+}
+
+ReactDom.render(<App />, document.getElementById("root"));
