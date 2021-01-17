@@ -1,20 +1,19 @@
 import React, { useState, useEffect } from "react";
+import placeholder from './images/cover.png'
 
 export default function BookImage(props) {
   const { title, author } = props;
 
   const url = "https://www.googleapis.com/books/v1/volumes?q=";
-  const api = url + title;
-  const [imgSrc, setImgSrc] = useState("");
+  const api = url + title
+  const [imgSrc, setImgSrc] = useState(placeholder);
 
   useEffect(() => {
     fetchData();
-  });
+  }, []);
 
-  if(title === "L'odysée"){
-      console.log(api)
-  }
   const fetchData = async () => {
+    console.log(api)
     const data = await fetch(api);
     const json = await data.clone().json();
 
@@ -43,5 +42,5 @@ export default function BookImage(props) {
     }
   };
 
-  return <img src={imgSrc} alt="cover" />;
+  return <img src={imgSrc} className="image" alt="cover" />;
 }

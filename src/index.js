@@ -8,8 +8,8 @@ import books from "./data/books.json";
 function App() {
   const [newBooks, setNewBooks] = useState([]);
 
-  const handleNewBook = (newBook) => {
-    const obj = { "title": newBook };
+  const handleNewBook = (newBook, newAuthor) => {
+    const obj = { "title": newBook, "author": newAuthor };
     setNewBooks((books) => books.concat(obj));
   };
 

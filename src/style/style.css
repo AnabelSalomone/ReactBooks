@@ -11,3 +11,8 @@
   display: flex;
   flex-wrap: wrap;
 }
+
+.image{
+  width: 128px;
+  height: 182px;
+}
