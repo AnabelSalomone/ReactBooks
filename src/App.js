@@ -13,8 +13,8 @@ function App() {
 
   return (
     <div>
-      <Booklist books={books} newBooks={newBooks} />
       <AddBook handle={handleNewBook} />
+      <Booklist books={books} newBooks={newBooks} />
     </div>
   );
 }

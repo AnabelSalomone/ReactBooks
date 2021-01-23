@@ -16,3 +16,13 @@
   width: 128px;
   height: 182px;
 }
+
+.add-book{
+  display: flex;
+  justify-content: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.add-book-title{
+  margin-right: 20px;
+}

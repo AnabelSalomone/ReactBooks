@@ -4,12 +4,23 @@ import BookImage from "./BookImage";
 const Book = (props) => {
   const { title, author } = props;
 
-  return (
-    <div className="book">
-      <BookImage title={title} author={author} />
+  let presentation = ""
+  
+  if(author) {
+    presentation = (
       <p>
         {title}, by {author}
       </p>
+    );
+  } else {
+    presentation = <p>{title} (no author given)</p>
+  }
+
+
+  return (
+    <div className="book">
+      <BookImage title={title} author={author} />
+      {presentation}
     </div>
   );
 };

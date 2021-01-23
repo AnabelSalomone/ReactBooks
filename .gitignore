@@ -7,6 +7,7 @@
 
 #env
 .env
+/server/keys.json
 
 # testing
 /coverage
