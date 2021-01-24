@@ -11,7 +11,7 @@ const Booklist = (props) => {
     return (
       <section className="booklist">
         {total.map((book) => {
-          return <Book title={book.title} author={book.author} />;
+          return <Book id={book.title} title={book.title} author={book.author} />;
         })}
       </section>
     );
